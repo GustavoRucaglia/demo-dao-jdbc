@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -46,6 +47,12 @@ public class Program {
 		 System.out.println("digite um id");
 		 int id = sc.nextInt();
 		 sellerDao.deleById(id);
+		 
+		 System.out.println("\n=== TEST 6: Seller findByDeparment ===");
+		 
+		 DepartmentDao departmentDao =DaoFactory.createDepartmentDao();
+		 Department department1 = new Department(2,"RH");
+		 departmentDao.insert(department1);
 		 sc.close();
 	}
 
